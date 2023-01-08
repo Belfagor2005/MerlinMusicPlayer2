@@ -1,0 +1,108 @@
+<skin>
+
+<!--MerlinMusicPlayer2LCDScreen ID3-->
+<screen name="MerlinMusicPlayer2LCDScreen" backgroundColor="#00000000" position="0,0" size="400,240" id="3">
+	<ePixmap position="2,20" size="400,127" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/vumeter.png" zPosition="0" />
+	<widget name="rms0" channel="0" backgroundColor="background" zPosition="13" position="3,35" size="200,127" pixmap1="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/needle.png" transparent="1" mode="vumeter" maxValue="120" smoothing="0.93" startAngle="-50" clockwise="1" vumeterLocation="0,0" vumeterAttack="0.1" vumeterAxis="100,126" />
+	<widget name="rms1" channel="1" backgroundColor="background" zPosition="13" position="200,35" size="200,127" pixmap1="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/needle.png" transparent="1" mode="vumeter" maxValue="120" smoothing="0.93" startAngle="-50" clockwise="1" vumeterLocation="0,0" vumeterAttack="0.1" vumeterAxis="100,126" />
+	<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/line.png" position="0,175" size="400,1" />
+	<widget name="text1" position="10,180" size="380,60" transparent="1" foregroundColor="#404040" backgroundColor="#00000000" halign="center" valign="top" font="Regular;20"/>
+</screen>
+
+<!--MerlinMusicPlayer2LCDScreen ID2-->
+<screen name="MerlinMusicPlayer2LCDScreen" position="0,0" size="96,64" id="2">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="92,12" valign="top" font="Regular;10" halign="center">
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,14" size="92,35" halign="center" valign="top" font="Regular;14"/>
+	<widget name="text4" position="4,51" size="92,12" halign="center" valign="top" font="Regular;10"/>
+</screen>
+
+
+<!--MerlinMusicPlayer2LCDScreen ID1-->
+<screen name="MerlinMusicPlayer2LCDScreen" position="0,0" size="132,64" id="1">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="128,12" valign="top" font="Regular;10" halign="center">
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,14" size="128,35" halign="center" valign="top" font="Regular;14"/>
+	<widget name="text4" position="4,51" size="128,12" halign="center" valign="top" font="Regular;10"/>
+</screen>
+
+<!--MerlinMusicPlayer2LCDScreen ID100-->
+<screen name="MerlinMusicPlayer2LCDScreen" backgroundColor="#00000000" position="0,0" size="240,80" id="100">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="236,24" valign="top" font="Regular;22" halign="center" foregroundColor="#f0f0f0" transparent="1" >
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,26" size="236,54" halign="center" valign="top" font="Regular;24" foregroundColor="#fcc000" transparent="1"/>
+</screen>
+
+
+<!--MerlinMusicPlayer2PicturesLCDScreen ID3-->
+<screen name="MerlinMusicPlayer2PicturesLCDScreen" backgroundColor="#00000000" position="0,0" size="400,240" id="3">
+       <widget name="text1" position="0,0" size="400,60" halign="center" valign="center" font="Regular;24" foregroundColor="#fcc000" transparent="1"/>
+       <widget name="cover" position="139,60" size="122,122" transparent="1" zPosition="10" mode="cover" noCoverAvailablePic="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/no-cover.png" />
+       <widget source="session.CurrentService" render="Label" position="5,190" size="395,30" zPosition="1" font="Regular;26" halign="left" foregroundColor="#f0f0f0" transparent="1" >
+               <convert type="ServicePosition">Position,ShowHours</convert>
+       </widget>
+       <widget source="session.CurrentService" render="Label" position="0,190" size="395,30" zPosition="1" font="Regular;26" halign="right" foregroundColor="#f0f0f0" transparent="1" >
+               <convert type="ServicePosition">Length,ShowHours,HideZero</convert>
+       </widget>
+       <widget name="PositionGauge" position="110,196" size="198,14" pointer="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/progressbar.png:198,0" 
+               seek_pointer="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer2/images/progressbar.png:198,0" transparent="1"/>
+</screen>
+
+<!--MerlinMusicPlayer2PicturesLCDScreen ID2-->
+<screen name="MerlinMusicPlayer2PicturesLCDScreen" position="0,0" size="96,64" id="2">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="92,12" valign="top" font="Regular;10" halign="center">
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,14" size="92,35" halign="center" valign="top" font="Regular;14"/>
+	<widget name="text4" position="4,51" size="92,12" halign="center" valign="top" font="Regular;10"/>
+</screen>
+
+
+<!--MerlinMusicPlayer2PicturesLCDScreen ID1-->
+<screen name="MerlinMusicPlayer2PicturesLCDScreen" position="0,0" size="132,64" id="1">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="128,12" valign="top" font="Regular;10" halign="center">
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,14" size="128,35" halign="center" valign="top" font="Regular;14"/>
+	<widget name="text4" position="4,51" size="128,12" halign="center" valign="top" font="Regular;10"/>
+</screen>
+
+<!--MerlinMusicPlayer2LCDScreen ID100-->
+<screen name="MerlinMusicPlayer2PicturesLCDScreen" backgroundColor="#00000000" position="0,0" size="240,80" id="100">
+	<widget source="session.CurrentService" render="Label" position="4,0" size="236,24" valign="top" font="Regular;22" halign="center" foregroundColor="#f0f0f0" transparent="1" >
+		<convert type="ServicePosition">Position,ShowHours</convert>
+	</widget>
+	<widget name="text1" position="4,26" size="236,54" halign="center" valign="top" font="Regular;24" foregroundColor="#fcc000" transparent="1"/>
+</screen>
+
+<!--MerlinMusicPlayerLCDScreenText ID3-->
+<screen name="MerlinMusicPlayerLCDScreenText" backgroundColor="#00000000" position="0,0" size="400,240" id="3">
+	<widget name="text3" position="5,40" size="395,35" font="Regular;28" foregroundColor="#f0f0f0" transparent="1" />
+	<widget name="text1" position="5,80" size="395,50" font="Regular;40" foregroundColor="#fcc000" transparent="1" />
+	<widget name="text4" position="4,140" size="396,35" font="Regular;28" foregroundColor="#f0f0f0" transparent="1" />
+</screen>
+
+<!--MerlinMusicPlayerLCDScreenText ID2-->
+<screen name="MerlinMusicPlayerLCDScreenText" position="0,0" size="96,64" id="2">
+	<widget name="text3" position="4,0" size="92,14" font="Regular;10"/>
+	<widget name="text1" position="4,14" size="92,35" font="Regular;14"/>
+	<widget name="text4" position="4,49" size="92,14" font="Regular;10"/>
+</screen>
+
+<!--MerlinMusicPlayerLCDScreenText ID1-->
+<screen name="MerlinMusicPlayerLCDScreenText" position="0,0" size="132,64" id="1">
+	<widget name="text3" position="4,0" size="128,14" font="Regular;10"/>
+	<widget name="text1" position="4,14" size="128,35" font="Regular;14"/>
+	<widget name="text4" position="4,49" size="128,14" font="Regular;10"/>
+</screen>
+
+<!--MerlinMusicPlayer2LCDScreen ID100-->
+<screen name="MerlinMusicPlayerLCDScreenText" backgroundColor="#00000000" position="0,0" size="240,80" id="100">
+	<widget name="text3" position="4,0" size="236,18" font="Regular;14" foregroundColor="#f0f0f0" transparent="1" />
+	<widget name="text1" position="4,18" size="236,39" font="Regular;18" foregroundColor="#fcc000" transparent="1" />
+	<widget name="text4" position="4,57" size="236,14" font="Regular;14" foregroundColor="#f0f0f0" transparent="1" />
+</screen>
+</skin>
