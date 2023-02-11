@@ -1,4 +1,3 @@
-
 #
 
 #  Merlin Music Player E2
@@ -22,9 +21,7 @@
 #  distributed other than under the conditions noted above.
 
 #
-
 # merlin mp3 player
-
 # for localized messages
 from . import _
 from Components.AVSwitch import AVSwitch
@@ -79,6 +76,7 @@ from enigma import getDesktop
 from enigma import iPlayableService, iServiceInformation
 from json import loads as json_loads
 from keyids import KEYIDS
+from merlin_musicplayer.emerlinmusicplayer import eMerlinMusicPlayer, eMerlinMusicPlayerRecorder, eMerlinVideoPlayer
 from mutagen.aiff import AIFF
 from mutagen.easyid3 import EasyID3
 from mutagen.easymp4 import EasyMP4
@@ -101,7 +99,6 @@ from twisted.web.client import HTTPClientFactory, downloadPage
 from twisted.web.client import getPage
 from urllib import quote
 from xml.etree.cElementTree import fromstring as cet_fromstring
-from merlin_musicplayer.emerlinmusicplayer import eMerlinMusicPlayer, eMerlinMusicPlayerRecorder, eMerlinVideoPlayer
 import merlin_musicplayer._emerlinmusicplayer
 import urlparse
 
@@ -1525,7 +1522,7 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
         self.repeat = False
         self.currentFilename = ""
         self.currentGoogleCoverFile = ""
-        self.googleDownloadDir = os_path.join(config.plugins.merlinmusicplayer2.googleimagepath.value, "downloaded_covers/" )
+        self.googleDownloadDir = os_path.join(config.plugins.merlinmusicplayer2.googleimagepath.value, "/downloaded_covers/" )
         if not os_path.exists(self.googleDownloadDir):
             try:
                 os_mkdir(self.googleDownloadDir)
@@ -1709,7 +1706,7 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
 
     def setupFinished(self, result):
         if result:
-            self.googleDownloadDir = os_path.join(config.plugins.merlinmusicplayer2.googleimagepath.value, "downloaded_covers/" )
+            self.googleDownloadDir = os_path.join(config.plugins.merlinmusicplayer2.googleimagepath.value, "/downloaded_covers/" )
             if not os_path.exists(self.googleDownloadDir):
                 try:
                     os_mkdir(self.googleDownloadDir)
@@ -1925,7 +1922,7 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
         self.updateSingleMusicInformation("genre", genre, clear)
         self.updateSingleMusicInformation("track", track, clear)
         self.currentTitle = title
-        if self.iDreamMode and self.songList[self.currentIndex][0].PTS is not None:
+        if self.iDreamMode is not None and self.songList[self.currentIndex][0].PTS is not None:
             # for lyrics
             self.songList[self.currentIndex][0].title = title
             self.songList[self.currentIndex][0].artist = artist
@@ -2015,7 +2012,7 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
         return f.replace(" ","_")
 
     def coverDownloadFailed(self,result):
-        print "[MerlinMusicPlayer] cover download failed: %s " % result
+        print("[MerlinMusicPlayer] cover download failed: %s " % result)
         self.setCovers("")
 
     def coverDownloadFinished(self,filename, result):
@@ -2120,7 +2117,6 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
                 self.currentIndex = len(self.songList) - 1
             else:
                 self.currentIndex -= 1
-
         if self.songList[self.currentIndex][0].PTS is None:
             self.playSong(self.songList[self.currentIndex][0].filename)
         else:
@@ -2196,7 +2192,6 @@ class MerlinMusicPlayer2Screen(MerlinMusicPlayerBase, Screen, InfoBarBase, InfoB
     def showPlaylistCallback(self, index):
         if index != -1:
             self.currentIndex = index
-
             if self.songList[self.currentIndex][0].PTS is None:
                 self.playSong(self.songList[self.currentIndex][0].filename)
             else:
@@ -2307,7 +2302,6 @@ class MerlinMusicPlayer2Lyrics(MerlinMusicPlayerBase, Screen):
     def pageUp(self):
         self["lyric_text"].pageUp()
 
-
     def pageDown(self):
         self["lyric_text"].pageDown()
 
@@ -2315,7 +2309,6 @@ class MerlinMusicPlayer2Lyrics(MerlinMusicPlayerBase, Screen):
 class MerlinMusicPlayer2SongList(MerlinMusicPlayerBase, Screen):
 
     IS_DIALOG = True
-
 
     def __init__(self, session, songlist, index, idreammode):
         self.session = session
@@ -2720,7 +2713,7 @@ class iDream(MerlinMusicPlayerBase, Screen):
             if sel.navigator and len(self.cacheList) > 0:
                 cache = self.cacheList.pop()
             else:
-                cache = CacheList(cache=False, index=-1)
+                cache = CacheList(cache=False, index= -1)
             if sel.navigator:
                 self["headertext"].setText(cache.headertext)
                 if cache.cache:
@@ -3618,7 +3611,6 @@ class MerlinMusicPlayer2FileList(MerlinMusicPlayerBase, Screen):
         Screen.__init__(self, session)
         MerlinMusicPlayerBase.__init__(self)
         self["list"] = FileList(config.plugins.merlinmusicplayer2.defaultfilebrowserpath.value, showDirectories = True, showFiles = True, matchingPattern = ".([aA][aA][cC]|[mM][pP]3|[mM][pP]2|[mM][pP]1|[mM]4[aA]|[fF][lL][aA][cC]|[oO][gG][gG]|[aA][iI][fF]|[aA][iI][fF][fF]|[wW][aA][vV]|[wW][mM][aA]|[aA][uU]|[mM][pP][cC]|[mM]3[uU]|[pP][lL][sS]|[cC][uU][eE])$", useServiceRef = False)
-
         self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ColorActions", "EPGSelectActions", "InfobarActions"],
         {
             "ok": self.ok,
@@ -3924,7 +3916,6 @@ class MerlinMusicPlayer2FileList(MerlinMusicPlayerBase, Screen):
 
     def appendFileToSongList(self):
         playerAvailable =  self.player is not None and self.player.songList
-
         filename = self["list"].getFilename()
         if isValidAudio(filename):
             SongList = []
@@ -3946,7 +3937,6 @@ class MerlinMusicPlayer2FileList(MerlinMusicPlayerBase, Screen):
                 self.session.open(MessageBox, _("%s\nappended to songlist")%a.text, type = MessageBox.TYPE_INFO,timeout = 3 )
 
     def insertFileToSongList(self):
-
         if self.player is not None and self.player.songList:
             index = self.player.currentIndex
             filename = self["list"].getFilename()
