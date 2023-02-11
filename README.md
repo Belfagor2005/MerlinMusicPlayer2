@@ -9,3 +9,4 @@ Merlin Music Player
 Merlin Music Player and iDream
 Manage your music files in a database, play it with Merlin Music Player.
 
+fixed Lululla
