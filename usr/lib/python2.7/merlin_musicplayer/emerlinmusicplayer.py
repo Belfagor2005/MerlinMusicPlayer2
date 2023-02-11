@@ -52,6 +52,7 @@ try:
 except ImportError:
     import __builtin__
 
+
 def _swig_setattr_nondynamic(self, class_type, name, value, static=1):
     if (name == "thisown"):
         return self.this.own(value)
@@ -108,15 +109,20 @@ except __builtin__.Exception:
 
 
 import enigma
+
+
 class MerlinPairVector(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
+
     def __iter__(self):
         return self.iterator()
 
     def __init__(self, *args):
         _emerlinmusicplayer.MerlinPairVector_swiginit(self, _emerlinmusicplayer.new_MerlinPairVector(*args))
     __swig_destroy__ = _emerlinmusicplayer.delete_MerlinPairVector
+
+
 MerlinPairVector.iterator = new_instancemethod(_emerlinmusicplayer.MerlinPairVector_iterator, None, MerlinPairVector)
 MerlinPairVector.__nonzero__ = new_instancemethod(_emerlinmusicplayer.MerlinPairVector___nonzero__, None, MerlinPairVector)
 MerlinPairVector.__bool__ = new_instancemethod(_emerlinmusicplayer.MerlinPairVector___bool__, None, MerlinPairVector)
@@ -155,6 +161,8 @@ from enigma import WeakMethodReference
 
 MAX_RETRIES = _emerlinmusicplayer.MAX_RETRIES
 VIDEO_STREAMTYPE_MPEG2 = _emerlinmusicplayer.VIDEO_STREAMTYPE_MPEG2
+
+
 class eMerlinMusicPlayerRMSSlider(enigma.eSlider):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
@@ -162,6 +170,7 @@ class eMerlinMusicPlayerRMSSlider(enigma.eSlider):
     def __init__(self, parent):
         _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_swiginit(self, _emerlinmusicplayer.new_eMerlinMusicPlayerRMSSlider(parent))
     __swig_destroy__ = _emerlinmusicplayer.delete_eMerlinMusicPlayerRMSSlider
+
     modeStandardEnigmaSlider = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeStandardEnigmaSlider
     modeImagesOrientationUp = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeImagesOrientationUp
     modeSingleImageOrientationUp = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeSingleImageOrientationUp
@@ -177,6 +186,8 @@ class eMerlinMusicPlayerRMSSlider(enigma.eSlider):
     modeImageRMSPeakLeft = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeImageRMSPeakLeft
     modeImageRMSPeakRight = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeImageRMSPeakRight
     modeVUMeter = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_modeVUMeter
+
+
 eMerlinMusicPlayerRMSSlider.setChannel = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_setChannel, None, eMerlinMusicPlayerRMSSlider)
 eMerlinMusicPlayerRMSSlider.setMode = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_setMode, None, eMerlinMusicPlayerRMSSlider)
 eMerlinMusicPlayerRMSSlider.setMaxValue = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_setMaxValue, None, eMerlinMusicPlayerRMSSlider)
@@ -200,6 +211,7 @@ eMerlinMusicPlayerRMSSlider.setAdaption = new_instancemethod(_emerlinmusicplayer
 eMerlinMusicPlayerRMSSlider_swigregister = _emerlinmusicplayer.eMerlinMusicPlayerRMSSlider_swigregister
 eMerlinMusicPlayerRMSSlider_swigregister(eMerlinMusicPlayerRMSSlider)
 
+
 class eMerlinMusicPlayerWidget(enigma.eWidget):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
@@ -207,6 +219,7 @@ class eMerlinMusicPlayerWidget(enigma.eWidget):
     def __init__(self, parent):
         _emerlinmusicplayer.eMerlinMusicPlayerWidget_swiginit(self, _emerlinmusicplayer.new_eMerlinMusicPlayerWidget(parent))
     __swig_destroy__ = _emerlinmusicplayer.delete_eMerlinMusicPlayerWidget
+
     modeVisUpDown = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeVisUpDown
     modeVisRoundCover = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeVisRoundCover
     modeStandardCover = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeStandardCover
@@ -220,6 +233,8 @@ class eMerlinMusicPlayerWidget(enigma.eWidget):
     modeVisGLDots = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeVisGLDots
     modeVisGLSinus = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeVisGLSinus
     modeVisGLRandom = _emerlinmusicplayer.eMerlinMusicPlayerWidget_modeVisGLRandom
+
+
 eMerlinMusicPlayerWidget.setAspectRatio = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerWidget_setAspectRatio, None, eMerlinMusicPlayerWidget)
 eMerlinMusicPlayerWidget.setCover = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerWidget_setCover, None, eMerlinMusicPlayerWidget)
 eMerlinMusicPlayerWidget.setMode = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerWidget_setMode, None, eMerlinMusicPlayerWidget)
@@ -244,6 +259,7 @@ eMerlinMusicPlayerWidget.visGLRandomStart = new_instancemethod(_emerlinmusicplay
 eMerlinMusicPlayerWidget_swigregister = _emerlinmusicplayer.eMerlinMusicPlayerWidget_swigregister
 eMerlinMusicPlayerWidget_swigregister(eMerlinMusicPlayerWidget)
 
+
 class eMerlinMusicPlayer(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
@@ -252,6 +268,8 @@ class eMerlinMusicPlayer(object):
         _emerlinmusicplayer.eMerlinMusicPlayer_swiginit(self, _emerlinmusicplayer.new_eMerlinMusicPlayer())
     __swig_destroy__ = _emerlinmusicplayer.delete_eMerlinMusicPlayer
     getInstance = staticmethod(_emerlinmusicplayer.eMerlinMusicPlayer_getInstance)
+
+
 eMerlinMusicPlayer.setFunc = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayer_setFunc, None, eMerlinMusicPlayer)
 eMerlinMusicPlayer.show_iFrame_Pic = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayer_show_iFrame_Pic, None, eMerlinMusicPlayer)
 eMerlinMusicPlayer.enableGapless = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayer_enableGapless, None, eMerlinMusicPlayer)
@@ -261,9 +279,13 @@ eMerlinMusicPlayer.setEqualizerData = new_instancemethod(_emerlinmusicplayer.eMe
 eMerlinMusicPlayer_swigregister = _emerlinmusicplayer.eMerlinMusicPlayer_swigregister
 eMerlinMusicPlayer_swigregister(eMerlinMusicPlayer)
 
+
 def eMerlinMusicPlayer_getInstance():
     return _emerlinmusicplayer.eMerlinMusicPlayer_getInstance()
+
+
 eMerlinMusicPlayer_getInstance = _emerlinmusicplayer.eMerlinMusicPlayer_getInstance
+
 
 class eMerlinMusicPlayerRecorder(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
@@ -276,11 +298,14 @@ class eMerlinMusicPlayerRecorder(object):
     evRecordRunning = _emerlinmusicplayer.eMerlinMusicPlayerRecorder_evRecordRunning
     evRecordStopped = _emerlinmusicplayer.eMerlinMusicPlayerRecorder_evRecordStopped
     evRecordFailed = _emerlinmusicplayer.eMerlinMusicPlayerRecorder_evRecordFailed
+
+
 eMerlinMusicPlayerRecorder.start = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRecorder_start, None, eMerlinMusicPlayerRecorder)
 eMerlinMusicPlayerRecorder.stop = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRecorder_stop, None, eMerlinMusicPlayerRecorder)
 eMerlinMusicPlayerRecorder.isRecording = new_instancemethod(_emerlinmusicplayer.eMerlinMusicPlayerRecorder_isRecording, None, eMerlinMusicPlayerRecorder)
 eMerlinMusicPlayerRecorder_swigregister = _emerlinmusicplayer.eMerlinMusicPlayerRecorder_swigregister
 eMerlinMusicPlayerRecorder_swigregister(eMerlinMusicPlayerRecorder)
+
 
 class eServiceMerlinMP3Player_ENUMS(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
@@ -299,10 +324,14 @@ class eServiceMerlinMP3Player_ENUMS(object):
     evGeneralGstError = _emerlinmusicplayer.eServiceMerlinMP3Player_ENUMS_evGeneralGstError
     evDurationChanged = _emerlinmusicplayer.eServiceMerlinMP3Player_ENUMS_evDurationChanged
     evStreamStart = _emerlinmusicplayer.eServiceMerlinMP3Player_ENUMS_evStreamStart
+
+
 eServiceMerlinMP3Player_ENUMS_swigregister = _emerlinmusicplayer.eServiceMerlinMP3Player_ENUMS_swigregister
 eServiceMerlinMP3Player_ENUMS_swigregister(eServiceMerlinMP3Player_ENUMS)
 
 eServiceMerlinMP3Player = eServiceMerlinMP3Player_ENUMS
+
+
 class eMerlinVideoPlayer(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
@@ -310,6 +339,8 @@ class eMerlinVideoPlayer(object):
     def __init__(self):
         _emerlinmusicplayer.eMerlinVideoPlayer_swiginit(self, _emerlinmusicplayer.new_eMerlinVideoPlayer())
     __swig_destroy__ = _emerlinmusicplayer.delete_eMerlinVideoPlayer
+
+
 eMerlinVideoPlayer.isPlaying = new_instancemethod(_emerlinmusicplayer.eMerlinVideoPlayer_isPlaying, None, eMerlinVideoPlayer)
 eMerlinVideoPlayer.play = new_instancemethod(_emerlinmusicplayer.eMerlinVideoPlayer_play, None, eMerlinVideoPlayer)
 eMerlinVideoPlayer.stop = new_instancemethod(_emerlinmusicplayer.eMerlinVideoPlayer_stop, None, eMerlinVideoPlayer)
@@ -324,6 +355,7 @@ eMerlinVideoPlayer.getVolume = new_instancemethod(_emerlinmusicplayer.eMerlinVid
 eMerlinVideoPlayer_swigregister = _emerlinmusicplayer.eMerlinVideoPlayer_swigregister
 eMerlinVideoPlayer_swigregister(eMerlinVideoPlayer)
 
+
 class eMerlinEqualizerWidget(enigma.eWidget):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
@@ -331,12 +363,11 @@ class eMerlinEqualizerWidget(enigma.eWidget):
     def __init__(self, parent):
         _emerlinmusicplayer.eMerlinEqualizerWidget_swiginit(self, _emerlinmusicplayer.new_eMerlinEqualizerWidget(parent))
     __swig_destroy__ = _emerlinmusicplayer.delete_eMerlinEqualizerWidget
+
+
 eMerlinEqualizerWidget.setAspectRatio = new_instancemethod(_emerlinmusicplayer.eMerlinEqualizerWidget_setAspectRatio, None, eMerlinEqualizerWidget)
 eMerlinEqualizerWidget.initialize = new_instancemethod(_emerlinmusicplayer.eMerlinEqualizerWidget_initialize, None, eMerlinEqualizerWidget)
 eMerlinEqualizerWidget.setDistance = new_instancemethod(_emerlinmusicplayer.eMerlinEqualizerWidget_setDistance, None, eMerlinEqualizerWidget)
 eMerlinEqualizerWidget.setValue = new_instancemethod(_emerlinmusicplayer.eMerlinEqualizerWidget_setValue, None, eMerlinEqualizerWidget)
 eMerlinEqualizerWidget_swigregister = _emerlinmusicplayer.eMerlinEqualizerWidget_swigregister
 eMerlinEqualizerWidget_swigregister(eMerlinEqualizerWidget)
-
-
-
